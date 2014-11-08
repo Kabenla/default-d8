@@ -5,12 +5,12 @@ Vagrant.configure("2") do |config|
     vb.customize ["modifyvm", :id, "--memory", 2048]
   end
 
-  project = 'default-d7'
+  project = 'default-d8'
 
   config.vm.synced_folder ".", "/vagrant", :disabled => true
   config.vm.synced_folder ".", "/var/www/sites/#{project}.dev", :nfs => true
   config.vm.hostname = "#{project}.dev"
 
   config.ssh.forward_agent  = true
-  config.vm.network :private_network, ip: "10.33.36.11"
+  config.vm.network :private_network, ip: "10.33.36.58"
 end
