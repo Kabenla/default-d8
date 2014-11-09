@@ -1,5 +1,5 @@
 Vagrant.configure("2") do |config|
-  config.vm.box = "promet_wheezy"
+  config.vm.box = "promet_wheezy_php54"
   config.vm.box_url = "https://s3.amazonaws.com/kabenla_boxes/debian_wheezy_php54.box"
   config.vm.provider :virtualbox do |vb|
     vb.customize ["modifyvm", :id, "--memory", 2048]
