@@ -1,5 +1,7 @@
-default
+default-d8
 =======
+
+Drupal 8 box. 
 
 requirements
 ------------
@@ -14,37 +16,10 @@ Building
 * Run `vagrant up` to build the environment.
 * ssh in with `vagrant ssh`
 * Navigate to `/var/www/sites/PROJECT`.
-* cp `env.json` from `/var/drupal/default/` to next to your `settings.php`.
-* From inside your drupal root, run `../build/drush-build.sh local` and party.
 
 Use
 ---
-
-The build script `drush-build.sh` takes an environment argument which can be
-one of the following:
-
-* local
-* dev
-* prod
-
-additional environments can be added by simply adding a directory for it with
-a build.sh in it.
-
-Global
-------
-For all environments, the build script will:
-
-* enable and purge all modules within the build root (`mods_enable` and `mods_purge`) on every build for every environment.
-* Revert all features (`drush fra`), run update hooks (`drush updb`), and clear caches.
-
-Local
------
-This script is intended to create a local installation with a copy of the database and files. Use `mods_enable` in the environment directory to enable only modules needed for local development.
-
-Dev
------
-This script is intended to run on a development or staging environment. Use `mods_purge` in the environment directory to disable modules not needed on development or staging.
-
-Prod
------
-This script is intended to run on a production environment. Use `mods_purge` in the environment directory to disbale modules not needed on development or staging.
+1) Set up your hosts file to include default-d8.dev with an ip address of 10.33.36.58
+2) Run vagrant up (Vagrant is pointing to a box that is located on an Amazon S3 account.)
+3) In you browser go to http://default-d8.dev
+4) Follow instructions for setting up the Drupal 8 database
